@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS 1</title>
+</head>
+
+<body>
+    <div id="result">
+    </div>
+    <script>
+        //local storage fica gravado no local, na memoria do usuário, 
+        //o session some quando você fecha a sessão ou o browser
+        if (typeof(Storage) != 'undefined') {
+            localStorage.setItem("nome", "Chiquinha") //setItem - colocar o item no espaço que irá salvar,
+                //no caso precisa de uma chave, nesse caso "nome" e o valor que é "Chiquinha"
+            document.getElementById('result').innerHTML = localStorage.getItem("nome", "Chiquinha")
+        } else {
+            document.getElementById('result').innerHTML = "Desculpe, este browser não aceita Local Storage"
+        }
+    </script>
+</body>
+
+</html>
